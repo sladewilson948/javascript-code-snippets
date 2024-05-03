@@ -50,7 +50,7 @@ const obj1 = {
 console.log(obj1)
 obj1.gender = "Male"
 console.log(obj1)
-obj1.marital_status = "single but wants to be in a relationship with a baddie!!"
+obj1.marital_status = "single"
 console.log(obj1)
 
 const key = "email"
@@ -164,7 +164,7 @@ const new_obj_onee = {
     name: "Aman Dubey",
     age: 23,
     salary: 9500000,
-    hobbies: ["playing video games", "coding", "going to gym", "having sex", "bike rides"]
+    hobbies: ["playing video games", "coding", "going to gym", "bike rides"]
 }
 
 const new_obj_two = {
@@ -174,7 +174,7 @@ const new_obj_two = {
 }
 
 
-const new_obj_three = {...new_obj_onee, ...new_obj_two, common:"baddies on instagram"}
+const new_obj_three = {...new_obj_onee, ...new_obj_two, common_hobbies:"go to treks"}
 
 console.log(new_obj_three)
 
@@ -218,7 +218,7 @@ console.log(`Hi my name is ${name} and I am from ${address} and I am making arou
 
 const popular_female_singers = ["Dua Lipa", "Charllote Lawrence", "Bullow", "Maddison Beer", "Olivia Rodrigo", "Sabrina Carpenter", "Dixie Damelio"]
 
-// you see anything common in all these names. All these singers are white and skinny
+
 
 const [singer1, singer2, singer3, ...rest] = popular_female_singers
 console.log(singer1)
@@ -227,24 +227,7 @@ console.log(singer3)
 console.log(rest)
 
 
-const my_pookie = {
-    name:"Niharika Sharma",
-    age:26,
-    state: "Jammu and Kashmir",
-    salary:"7 crore",
-    hobbies: ["coding", "playing with feelings", "not accepting ig requests", "ghosting"],
-    skincolor: "extremly fair",
-    height: "5 foot 12 inches",
-    likes: ["going out to party", "drinking cheap drinks", "dating only guys above 7 foot"]
-}
 
-
-let {name:var1, age:var2, skincolor:var3, likes:var4, hobbies:var5, state: var6} = my_pookie
-
-const my_cannon_event = `Hi my name is Aman Dubey and I met a girl names ${var1} and she was just perfect and she was exactly my age which is ${var2} and she had a ${var3} skin tone and I fell in love with her and she gave me trauma and that is completely fine and she likes to do these things in not the given order ${var4} and her hobbies where ${var5} and the best part about her was that she was from ${var6}`
-
-
-console.log(my_cannon_event)
 
 
 console.log()
@@ -263,19 +246,18 @@ for (let obj of users)
 
 // lets try to see nested object destrturing
 
-const new_users = [{userId:0, userName: "Aman Dubey", userAge:26, userGender: "Male"}, {userId: 1, userName: "Niharika Sharma", userAge: 26, userGender: "Fenmale"}, {userId: 2, userName: "Jean Johnson", age: 27, userGender: "Female"}, {userId: 3, userName:"Pushpendra Deval Singh", age: 22, userGender: "Male"}]
+const new_users = [{userId:0, userName: "Aman Dubey", userAge:26, userGender: "Male"}, {userId: 1, userName: "Niharika Sharma", userAge: 26, userGender: "Female"}, {userId: 2, userName: "Jean Johnson", age: 27, userGender: "Female"}, {userId: 3, userName:"Pushpendra Deval Singh", age: 22, userGender: "Male"}]
 
 
 const [{userName:name1, userId: id1},{userName:nam2, userAge:age3},,{age:age2}] = new_users
 
 
 console.log("Hi my name is",name1, " and my user id is ",id1)
-console.log("My crush name is",nam2," and her age is same as me that is",age3)
+console.log("Her name is",nam2," and her age is same as me that is",age3)
 console.log("My best friends age is", age2)
 
 
 // this is called nested object destructing
-
 
 
 
