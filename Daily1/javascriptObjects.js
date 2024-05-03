@@ -204,7 +204,6 @@ const my_obj = {
     yob: 1998,
     salary: 650000,
     country: "India",
-    address: "B 32/32-40 Saket Nagar Sankat Mochan Varanasi!!"
 }
 
 // time to use destrucring
@@ -258,7 +257,6 @@ console.log("My best friends age is", age2)
 
 
 // this is called nested object destructing
-
 
 
 
