@@ -280,7 +280,7 @@ console.log(`My fave singer name is ${balue1} and her age is just ${balue2} and 
 
 // now lets say we want to make an array of all the singers where each element in the array is an object of the singer let's do that
 
-const my_top_artists = [{artist_name: "Drake", age:37, popular_songs: ["God's plan", "Toosie Slide", "First Person Shooter"], latest_song: "Pushups", albums: 7}, {artist_name: "Kendrick Lamar", age:36, popular_songs: ["DNA", "Count me Out", "Family Ties"], latest_song: "6:16 am in LA", albums: 5}, {artist_name: "Taylor Swift", age:34, popular_songs: ["Bad Blood", "Delicate", "Blank Space"], latest_song: "Fornight ft Post Malone", albums: 14}]
+const my_top_artists = [{artist_name: "Drake", age:37, popular_songs: ["God's plan", "Toosie Slide", "First Person Shooter"], latest_song: "Pushups", albums: 8}, {artist_name: "Kendrick Lamar", age:36, popular_songs: ["DNA", "Count me Out", "Family Ties"], latest_song: "6:16 am in LA", albums: 5}, {artist_name: "Taylor Swift", age:34, popular_songs: ["Bad Blood", "Delicate", "Blank Space"], latest_song: "Fornight ft Post Malone", albums: 14}]
 
 
 const [{artist_name: artist1, popular_songs: pop_songs1, age: drake_age}, {popular_songs:pop_songs2, latest_song: kendrick_song}] = my_top_artists
