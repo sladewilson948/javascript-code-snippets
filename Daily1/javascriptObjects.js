@@ -260,4 +260,39 @@ console.log("My best friends age is", age2)
 
 
 
+// lets take an example of object destructing again and then nested object destructing
+
+
+const object_to_destrucutre = {
+    artist_name: "bullow",
+    artist_age: 21,
+    origin: "USA",
+    top_songs: ["sweet little lies", "not a love song", "first place"],
+    latest_song: "sweet little lies"
+}
+
+
+console.log(object_to_destrucutre)
+
+const {artist_name:balue1, artist_age:balue2, latest_song:balue3} = object_to_destrucutre
+
+console.log(`My fave singer name is ${balue1} and her age is just ${balue2} and her latest song name is ${balue3}`)
+
+// now lets say we want to make an array of all the singers where each element in the array is an object of the singer let's do that
+
+const my_top_artists = [{artist_name: "Drake", age:37, popular_songs: ["God's plan", "Toosie Slide", "First Person Shooter"], latest_song: "Pushups", albums: 7}, {artist_name: "Kendrick Lamar", age:36, popular_songs: ["DNA", "Count me Out", "Family Ties"], latest_song: "6:16 am in LA", albums: 5}, {artist_name: "Taylor Swift", age:34, popular_songs: ["Bad Blood", "Delicate", "Blank Space"], latest_song: "Fornight ft Post Malone", albums: 14}]
+
+
+const [{artist_name: artist1, popular_songs: pop_songs1, age: drake_age}, {popular_songs:pop_songs2, latest_song: kendrick_song}] = my_top_artists
+
+console.log(artist1)
+console.log(pop_songs1)
+console.log(pop_songs2)
+console.log(drake_age)
+console.log(kendrick_song)
+
+
+// this is how we do nested destructuring
+
+
 
