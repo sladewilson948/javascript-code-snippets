@@ -78,3 +78,59 @@ console.log(findTraget([1,2,3,4,5,6,7,8,9,0],4))
 
 const isEven = number => number%2==0
 console.log(isEven(4))
+
+
+// hoisting only workd on function decleration but not on function expression
+
+// functions inside of functions
+
+
+const app = () => {
+    
+    const myFunc = () => {
+        console.log("Hello from my func")
+    }
+
+    const addTwo = (num1,num2) => {
+        return num1 + num2
+    }
+
+    const multi = (num1,num2,num3) => {
+        return num1 * num2 * num3
+    }
+    console.log("Inside App")
+    // running myFunc()
+    myFunc()
+    console.log(addTwo(4,5))
+    console.log(multi(3,4,5))
+
+}
+app();
+
+
+// lexical scope in functions
+const myvar = "value1"
+function myApp() {
+
+    
+    function myFunc()
+    {
+        //const myvar = "value69"
+        console.log("Inside my func", myvar)
+
+    }
+
+    // const myFunc2 = function(){
+
+    // }
+
+    // const myFunc3 = () => {
+
+    // }
+
+    console.log(myvar)
+    myFunc()
+}   
+
+myApp()
+
