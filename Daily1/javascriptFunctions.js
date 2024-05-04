@@ -20,7 +20,7 @@ console.log(`Hi my name is ${name2} and my hobbies are ${hobbie2}`)
 
 // making a function to check if a value is present in the list or not 
 
-
+// function decleration
 function checkIfExists(list1,target)
 {
     for(let ele of list1)
@@ -40,3 +40,41 @@ const target = 7
 console.log(checkIfExists(list1,target))
 
 
+// function expressions
+
+const myFunction = (a,b) => {
+    console.log(a+b)
+}
+
+
+myFunction(23,46)
+
+
+// lets see the arrow functions in javascript
+
+
+const summThreeNumber = (val1,val2,val3) => {
+
+    return val1 + val2  +val3
+}
+
+console.log(summThreeNumber(1,67,1))
+
+const findTraget = (list1,target) =>{
+
+    for(let ele of list1)
+        {
+            if (ele===target){
+                return "Number exists"
+            }
+        }
+    return "Number does not exist"
+}
+
+console.log(findTraget([1,2,3,4,5,6,7,8,9,0],4))
+
+
+// checking if a number is odd or even
+
+const isEven = number => number%2==0
+console.log(isEven(4))
