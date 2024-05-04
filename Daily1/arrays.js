@@ -76,20 +76,7 @@ console.log(basket)
 // push and pop are faster than shift and unshift becuase it uses a lot of memory management
 
 
-let crushes = ["Niharika", "Dubli girl"]
-crushes.unshift("Varsha")
-crushes.unshift("Rachel")
-crushes.unshift("Moonika")
-console.log(crushes)
 
-
-crushes.pop()
-crushes.pop()
-
-console.log(crushes)
-crushes.shift()
-crushes.shift()
-console.log(crushes)
 
 // cloning an array
 let array1 = ["item1", "item2"]
