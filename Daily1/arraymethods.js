@@ -201,6 +201,28 @@ const filter_objects = employee_details.filter(user=>user.salary>10000)
 console.log(filter_objects)
 
 
+// lets see the reduce method
+
+const my_new_numbers = [1,2,3,4,5,6,7,8,9,10]
+console.log(my_new_numbers.reduce((a,b) => a+b))
+
+
+// using map and reduce together to get the best of the best example a shopping kart on flipkart
+
+// inthis case we mapeed the objects based on the price made a new list and then added them all using reduce method to get the final total
+
+const products = [
+    {product:"Apple TV", price:12000, category: "Electronics"},
+    {product: "MacBook 16 M3", price: 23000, category: "Electronics"},
+    {product: "Razer Mouse", price: 2000, category: "Electronics"},
+    {product: "Tesla Model S Plaid", price: 69420, category: "Vehicles"}
+]
+
+const final_price = products.map(prod=> prod.price).reduce((a,b) => a+b)
+console.log(`The final price is ${final_price} dollars`)
+
+
+
 
 
 
