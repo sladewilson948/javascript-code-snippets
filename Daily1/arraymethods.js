@@ -218,9 +218,15 @@ const products = [
     {product: "Tesla Model S Plaid", price: 69420, category: "Vehicles"}
 ]
 
+
+// this seems pretty long we can reduce it literraly
+
 const final_price = products.map(prod=> prod.price).reduce((a,b) => a+b)
 console.log(`The final price is ${final_price} dollars`)
 
+const final_final_price = products.reduce((totalPrice,prod) => totalPrice + prod.price,0)
+
+console.log(final_final_price)
 
 
 
