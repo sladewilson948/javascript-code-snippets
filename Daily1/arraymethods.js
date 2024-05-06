@@ -2,6 +2,7 @@
 // map
 // filter
 // reduce
+// sort methods in javascript
 
 
 const my_numbers = [1,2,3,4,5,6,7,8,10]
@@ -224,9 +225,103 @@ const products = [
 const final_price = products.map(prod=> prod.price).reduce((a,b) => a+b)
 console.log(`The final price is ${final_price} dollars`)
 
+// here prod is a javascript object that we are using as each item and we take the price value from that object
+
 const final_final_price = products.reduce((totalPrice,prod) => totalPrice + prod.price,0)
 
 console.log(final_final_price)
+
+//let's take one more example of how we can use reduce to find the salary of all th employees of a company
+
+const dadhiyaMajdoor = [
+    {employee_name: "Aman Dubey", YOE: 3, techStack:["react", "javascript", "nodejs", "nextjs"], salary:650000},
+    {employee_name: "Nancy Drew", YOE: 4, techStack:["react", "javascript","typescript","redux"], salary: 1200000},
+    {employee_name: "Dacid Putra", YOE: 2, techStack: ["code java", "spring boot"], salary: 450000}
+]
+
+// in this code snippet the accumalator is the totalSal varriable which has been set to zero initialy and the current value starts from the 650000 value and the values keep getting added
+
+const sum_of_all_salary = dadhiyaMajdoor.reduce((totalSal,obj)=> totalSal + obj.salary, 0)
+console.log(sum_of_all_salary)
+
+
+/// lets discuss about the sort method in javascript
+// the sort method in javascript sortt it in ascending order but acording to the string not the integr even if we add int to the list
+
+const my_values = [1,5,3,67,4,9]
+my_values.sort((a,b)=>a-b)
+console.log(my_values)
+
+// for sorting in descending order we can do
+my_values.sort((a,b)=>b-a)
+console.log(my_values)
+
+
+
+//now let's try to take a practical example where in we have a list of products and we must solve them based on the price
+// both in acesnding and descending order
+
+const amazonProd = [
+    {productName: "Tesla model Y", year: 1998, price: 69420},
+    {productName: "Apple Iphone 15 pro", year: 2023, price: 500},
+    {productName: "Solar Pannel", year:2020, price: 1000},
+    {productName: "Dyson AirWrap", year: 2024, price: 570}
+]
+
+// here we are sorting it in ascending order
+// here we sorted them from lo to hi
+amazonProd.sort((p1,p2)=> p1.price - p2.price)
+console.log(amazonProd)
+
+// here we are sortuing in desceding order
+// here we sorted them in hi to lo
+amazonProd.sort((p1,p2) => p2.price - p1.price)
+console.log(amazonProd)
+
+//let's say I want to find the total price of all the products in that case wecan use reduce
+
+const totalPrice = amazonProd.reduce((x,y) => x + y.price,0)
+console.log(totalPrice)
+
+
+/// let's make a product list of all the items in it and then we will sort them from hi to lo and lo to hi and find the sum of all the values in the cart
+
+
+const my_amazon_cart = [
+    {productName: "Apple watch", price: 1200, year: 2024},
+    {productName: "Apple TV ", price: 900, year: 2023},
+    {productName: "Smasung S24", price: 500, year: 2024},
+    {productName: "iPhone 15 pro max", price: 1100, year: 2024}
+]
+
+// first we need to sort it in ascendiong order
+console.log(my_amazon_cart.slice(0).sort((p1,p2) => p1.price - p2.price))
+console.log(my_amazon_cart.slice(0).sort((p1,p2) => p2.price - p1.price))
+//fidning the sum of all the values in the cars using reduce
+console.log(`Sum of all the items in the cart is ${my_amazon_cart.reduce((total,p) => total + p.price,0)} USD`)
+
+/// find methods in arrays
+
+
+/// creating a shopping list object
+
+const health_cart = [
+    {productName: "Creatine monohydrate", price: 2300, category: "Creatine"},
+    {productName: "Protien Powder", price: 1200, category: "Protien"},
+    {productName: "Oats", price: 120, category: "Oats"},
+    {productName: "Some thing", price: 750, category: "Forbiddne"}
+]
+
+
+// first is to make sure that we get the sum of all the price of the products in the cart
+const totalCost = health_cart.reduce((acum,obj) => acum+obj.price,0)
+console.log(`Your total cost comes up top be ${totalCost}`)
+
+// noww lets sort this objewct based on the price using the sort method
+const sorted_ascending_order = health_cart.slice(0).sort((obj1,obj2)=> obj1.price - obj2.price)
+console.log(sorted_ascending_order)
+const sorted_descending_order = health_cart.slice(0).sort((obj1,obj2)=> obj2.val - obj1.val)
+console.log(sorted_descending_order)
 
 
 
