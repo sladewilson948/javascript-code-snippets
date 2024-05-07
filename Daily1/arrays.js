@@ -167,3 +167,4 @@ console.log(`Rappers that are beefing with each other right now ${rap1}, ${rap2}
 console.log(rest)
 
 // this is how arrays destrucuring works
+// fill methds in arrays

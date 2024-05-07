@@ -325,6 +325,230 @@ console.log(sorted_descending_order)
 
 
 
+/// now letr us discuss about the find method in javascript
+
+const bunch_of_animals = ["cat","dogs","antman","rachel","horse","man","can","pan","see","saw","cat","tat","pin","nip"]
+
+function isLength3(string)
+{
+    return  string.length==3
+}
+
+bunch_of_animals.forEach((ele,index)=>{
+    if(isLength3(ele)){
+        console.log(`The length of the ${ele} is 3`)
+    }
+    else{
+        console.log(`The length of ${ele} is not three`)
+    }
+})
+
+
+// we will use find to check if we are able to get the length of an element in an array is three or not.
+const my_animals_here = ["cats","dog","bat","mouse"]
+
+function isLength3(string)
+{
+
+    return string.length===3
+}
+
+const res = my_animals_here.find(isLength3)
+console.log(res)
+
+// using this directly as a arrow function
+
+
+const my_animal = my_animals_here.find((x)=> {
+    return x.length==3
+})
+
+
+/// let's say we have a bunch of objects in an array and we need to find the object that has the name as Aman Dubey and return that object later now how can we do this using the help of find method in javascript
+
+const cognizant_employee_details = [
+    {employee_name:"Rachel Mc Adama", techstack:["Java", "Core Java","Spring Boot MVC"], salary: 650000},
+    {employee_name:"Bruce Wayne", techstack:["React", "TypeScript", "Angular", "Redux"], salary: 800000},
+    {employee_name:"Aman Dubey", techstack:["Nodejs","JavaScript","React","Redux","Python"], salary:670000}
+]
+
+const req_employee = cognizant_employee_details.find(x=>{
+    return x.employee_name=="Aman Dubey"
+})
+
+console.log(req_employee)
+console.log(req_employee.employee_name)
+console.log(req_employee.techstack)
+console.log(req_employee.salary)
+
+
+// always remember that the find method will always return the fisrt element thaty satisfy the required condition
+
+
+// let's say that we have a lists objects which are user information and we need to find the uder that has id of 3
+// we can do this with .find() method and arrow functions
+
+const users_with_id = [
+    {userId:1, user_name: "Aman Dubey", age:26},
+    {userId:2, user_name: "Archita Dubey", age:22},
+    {userId:3, user_name: "Mukesh Dubey", age:40},
+    {userId:4, user_name: "Sharda Dubey", age:38},
+    {userId:5, user_name: "Nancy Drew", age:40}
+]
+
+const required_user = users_with_id.find(x=>{
+    return x.userId==3
+})
+
+console.log(required_user)
+
+
+
+const my_animals = ["cat","bat","dog","rtachel","mania","bruh","rad"]
+
+
+my_animals.forEach(x=>{
+    if(x.length==3)
+        {
+            console.log("The legnth is three")
+        }
+    else{
+        console.log("The length of this animal is not three")
+    }
+})
+
+
+// the find function in javascript will return the first element that will satisy the given condition
+const animals = ["that","bat","cat","dog"]
+const req_animal = animals.find(x=>{
+    return x.length==3
+})
+
+console.log(req_animal)
+
+// let's try to use filter method a little buit
+
+const cognizant_employees = [
+    {employeeName: "Aman Dubey", age:26, salary:650000, hobbies:["coding", "eating good food"]},
+    {employeeName: "Archita Dubey", age:22, salary:50000, hobbies:["cokking", "eating good food"]},
+    {employeeName: "Aman Dubey", age:20, salary:650000, hobbies:["coding", "eating good food"]},
+    {employeeName: "Aman Dubey", age:21, salary:650000, hobbies:["coding", "eating good food"]},
+    {employeeName: "Aman Dubey", age:24, salary:650000, hobbies:["coding", "eating good food"]},
+]
+
+
+const req_obj = cognizant_employees.find(x=> x.age>23)
+console.log(req_obj)
+
+
+const new_list = cognizant_employees.filter(x=>x.age>22)
+console.log(new_list)
+console.log(new_list===cognizant_employees)
+
+// lets see about the array method called as sort
+
+const some_numbers = [1,67,44,23,89,44,23]
+const some_number_ascending = some_numbers.slice(0).sort((a,b) => a-b)
+console.log(some_number_ascending)
+const some_numbers_descending = some_numbers.slice(0).sort((a,b) => b-a)
+console.log(some_numbers_descending)
+
+
+const amazon_products_list = [
+    {productName: "Apple TV plus", category: "Electronics", price: 2300},
+    {productName: "One plus 12R", category: "Electronics", price: 200},
+    {productName: "Samsung galaxy S24", category: "Electronics", price: 3400},
+    {productName: "Apple Iphone 15 128 gb", category: "Electronics", price: 900},
+    {productName: "Apple Airpiods", category: "Electronics", price: 300},
+]
+
+
+const sorted_objects = amazon_products_list.slice(0).sort((obj1,obj2) => obj1.price - obj2.price)
+console.log(sorted_objects)
+
+// lets see how we can find the total of all these object prices
+const total_price = sorted_objects.reduce((accum,x)=> accum + x.price,0)
+console.log(total_price)
+
+const my_students = [
+    {studentid:1, studentname: "Aman Dubey", age:26, highestscore: 499, city: "Varanasi"},
+    {studentid:2, studentname: "Archita Dubey", age:22, highestscore: 399, city: "Varanasi"},
+    {studentid:3, studentname: "Dewal Pushpendra", age:23, highestscore: 299, city: "Varanasi"},
+    {studentid:4, studentname: "Nancy Drew", age:21, highestscore: 344, city: "Varanasi"},
+    {studentid:5, studentname: "Rachel Mc Adams", age:24, highestscore: 344, city: "Varanasi"},
+    {studentid:6, studentname: "Ryan Gosling", age:28, highestscore: 223, city: "Varanasi"},
+
+]
+
+const final_student = my_students.find(x=> x.age==23 && x.city=="Varanasi" && x.highestscore==299)
+console.log(final_student)
+
+
+
+// every method in javascript
+// it returns boolean value depending if all the elements in the array follow a specific consdition or not.
+
+const nums = [2,4,6,3,1,6,10,4,33,4,2]
+const ans = nums.every(x=> x%2===0)
+console.log(ans)
+
+// let's say we have alist of products where we have a list of products and we need to check if all the products have the price under 3k
+
+const user_products = [
+    {productName:"TV", price:12000},
+    {productName:"TV", price:14000},
+    {productName:"TV", price:11000},
+    {productName:"TV", price:16000},
+    {productName:"TV", price:16000},
+    {productName:"TV", price:18000},
+
+
+]
+
+const isless = user_products.every(x=>x.price<20000)
+if (isless)
+    {
+        console.log("All producsts are within our budgest")
+    }
+else{
+    console.log("Products are not in our budget")
+}
+
+
+// then we have the some condtion which says that even if there one element in the list that satiosfy the condition we need to return true in other words some is actually the reverse of every
+
+const sus_numbers = [2,4,6,7,8,10]
+const sus_ans = sus_numbers.some(x=>x%2!=0)
+console.log(sus_ans)
+
+
+// how to use fill to make new arrays
+const myArray = new Array(10).fill(-1)
+const myNewArray = new Array(20).fill(-2)// this will create an array of size 10 all having -1 as element
+
+const bruh_moment = new Array(20).fill("Kurchini Marta Pete")
+console.log(bruh_moment)
+
+
+const cts_array = [1,2,3,4,5,6,7,8,9,10]
+cts_array.fill(0)
+console.log(cts_array)
+
+const meme_array = new Array(20).fill("bagunara")
+console.log(meme_array)
+
+
+// the splice method
+const splice_array = ["ietm1","item2","item3","item4","item5","item6","item7"]
+
+// what are array liek objest
+// iterables like strings and lists are iterables where we can sue for loops are called iterables
+// iterables where we can apply for if loops
+
+// objects are not iterablle
+// array liek objest - have length like property and access via index
+
+
 
 
 
