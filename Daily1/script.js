@@ -33,3 +33,5 @@ function sliceString(text1)
 let final_string =  sliceString(toLower(toUpper(toTrim(first_name))))
 console.log(final_string)
 console.log(final_string.length)
+
+
