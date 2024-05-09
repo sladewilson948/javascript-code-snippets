@@ -135,3 +135,23 @@ console.log(product_gallery.sort((a,b) => a.price - b.price))
 console.log(product_gallery.sort((a,b) => b.price - a.price))
 const total = product_gallery.reduce((accum,obj) => accum + obj.price,0)
 console.log(total)
+
+
+const heart_map = new Map()
+
+
+const obj1 = {
+    fav_bike:"triumph speed 400",
+    engine: 400,
+    price: 250000,
+    topspeed: 230
+}
+
+heart_map.set(obj1, {cons:"you may experience some vibrations at higher revs", rarting:5})
+
+console.log(heart_map)
+console.log(heart_map.get(obj1).cons)
+
+
+
+
