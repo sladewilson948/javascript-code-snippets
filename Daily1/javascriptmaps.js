@@ -153,5 +153,141 @@ console.log(heart_map)
 console.log(heart_map.get(obj1).cons)
 
 
+// let su create an object that are the lists of objects that we buy froma store we havbe to do three tghings firtsly is to find the total sum then sort it using sort metho-d then also use the find method
 
 
+
+const my_products = [
+    {id:1, product_name: "Protiene chocolate heazelnut", price: 2300, quanity:3},
+    {id:2, product_name: "Creatine preAMP", price: 1200, quanity: 1},
+    {id:3, product_name: "Pre Workout", price: 3400, quanity: 2},
+    {id:4, product_name: "Resistance Band", price: 2900, quanity: 2}
+]
+
+const total_amout_is = my_products.reduce((accum, obj) => accum + obj.price, 0)
+console.log(total_amout_is)
+// console.log("ascending order")
+// console.log(my_products.sort((a,b) => a.price - b.price))
+// console.log("descending order")
+// console.log(my_products.sort((a,b) => b.price - a.price))
+
+
+// now let us see how we can use the find method inb javascript
+
+const what_i_need = my_products.find(a=> a.price==1200)
+console.log(what_i_need)
+console.log(what_i_need.product_name)
+
+// lets destructyur the array
+console.log()
+console.log()
+console.log()
+const [ob1,ob2,...ob3] = my_products
+console.log(ob1)
+console.log(ob2)
+console.log(ob3)
+
+// this how we deestructue a list
+// now let us destruc and object
+
+const my_personal_obj = {
+    name1: "Aman Dubey",
+    age: 26,
+    hobbies:["going to gym", "swimming", "eating good food", "travelling"]
+}
+
+
+const {name1,...rest} = my_personal_obj
+console.log(name1)
+console.log(rest)
+
+// there is also something called as nested object destructure where we have objects inside of lists
+
+const lists_of_people = [
+    {id:1, name: "Aman Dubey", age: 26, sex: "Male"}
+]
+
+console.log(lists_of_people)
+
+const my_new_obj1 = {..."abdefghighjklshdjkfh"}
+list1 = [["apple","bee"],["bnummble","bee"]]
+const apple_obj = {}
+for (let item of list1)
+    {
+        apple_obj[item[0]] = item[1]
+    }
+console.log(apple_obj)
+
+
+// lets us again see how we can destruictyure an obnchjt we have to make sure the keys are the smae
+
+const new_object = {
+    id:1,
+    name: "Aman Dubey",
+    age: 26,
+    city: "Varanasi",
+    country: "India",
+    salary: 23000000
+}
+
+const {id:value1, name:value2, age:value3, ...rest1} = new_object
+console.log(value1)
+console.log(value2)
+console.log(value3)
+console.log(rest1)
+
+
+// lets tryu to make an object using the spread oeprator
+
+const my_obj = {...["this","is","the","prime","example","of","how","we","can"]}
+console.log(my_obj)
+
+const string1 = "I want this string to be converted to a list"
+const my_new_lists = string1.split(" ").map(x=> x.toUpperCase())
+const new_obj_again = {}
+for(let idx in my_new_lists){
+    new_obj_again[idx] = my_new_lists[idx]
+}
+
+console.log(new_obj_again)
+
+
+// this was indeed a quick revision of how we can do object destructrting and stuff now let's see how we can use maps in javascript
+
+
+
+
+const product_map = new Map()
+const furniture = {
+    cat_id:69,
+    range: "2300 to 4600",
+    success_rate: 3,
+    profit_margin: 30,
+    performance: 65
+}
+const electronics = {
+    cat_id:21,
+    range: "1300 to 10600",
+    success_rate: 4,
+    profit_margin: 60,
+    performance: 95
+}
+
+const sports = {
+    cat_id:21,
+    range: "1300 to 3600",
+    success_rate: 4,
+    profit_margin: 40,
+    performance: 75
+}
+
+product_map.set("Bat",sports)
+product_map.set("Chair",furniture)
+product_map.set("Trimmer",electronics)
+product_map.set("TV",electronics)
+product_map.set("Leather Balls",sports)
+
+
+console.log(product_map)
+console.log(product_map.get("Bat").cat_id)
+console.log(product_map.get("Bat").profit_margin)
