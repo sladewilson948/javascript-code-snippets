@@ -281,13 +281,55 @@ const sports = {
     performance: 75
 }
 
+
+const vehicles = {
+    cat_id: 100,
+    range: "4500 to 100230",
+    success_rate: 3,
+    profit_margin: 3,
+    performance: 5
+}
+
 product_map.set("Bat",sports)
 product_map.set("Chair",furniture)
 product_map.set("Trimmer",electronics)
 product_map.set("TV",electronics)
 product_map.set("Leather Balls",sports)
+product_map.set("Triumph Speed 400", vehicles)
 
 
 console.log(product_map)
 console.log(product_map.get("Bat").cat_id)
 console.log(product_map.get("Bat").profit_margin)
+
+
+
+
+for (let [map1,{cat_id, range, success_rate, profit_margin, performance}] of product_map)
+    {
+        console.log(`the key in map is ${map1} and the value is ${cat_id} and the performance is ${performance} and profit margin is ${profit_margin} and the price range of the product is ${range} and the success rate of the product is ${success_rate}`)
+    }
+
+// we just did nestes object destructring!!
+// we can also make maps using lists having keys value pairs in the new keyowrd
+
+const bruh_we_could_do_this = new Map([
+    [{name2:"Aman Dubey", age:26, eye_color:"black",city:"varanasi"},[12,34,56,78]],
+    ["name is Aman Dubey",[1,2,3,4,5,6,7,8,9,10].reduce((a,b) => a+b)]
+])
+console.log(bruh_we_could_do_this)
+
+// use case we have a person1 object and I want to store some extra values for that person but not in the map but in the object
+const my_best_friend = {
+    name: "Superstar Mahesh Raju Nagarajan Sualpa Mone",
+    age: 20,
+    city: "Bangalore",
+    hobbies: "Doing mass movies",
+    slary: 40000000000000000000000000000000000
+}
+
+
+const my_best_friend_map = new Map()
+my_best_friend_map.set(my_best_friend,{pmarital_status:"single", bikes:["RE 350 classic", "CT100","Honda SP 125"]})
+
+console.log(my_best_friend_map)
