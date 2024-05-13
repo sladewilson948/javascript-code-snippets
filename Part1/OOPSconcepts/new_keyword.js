@@ -155,3 +155,159 @@ for(let key in stu1)
 // return it
 // also sets the proto to the protoype the linking will be done automaticaly whichw e were doing using the Object.create(method_name.prototype) this will done autonmaticaly so when we call for a method that is not present in the object it will directly look in the prototype object of the function that we created
 
+
+// we will see how the Object.crerate prototype and new keywords differ from each other
+
+
+
+
+// first we will define the methods in a diffrent Object
+
+const otherMethods = {
+
+    about: function()
+    {
+        return `Hi my name is ${this.name} and I am ${this.age} years old and I must switch to a diffrent company`
+    },
+
+    is18: function()
+    {
+        return this.age>=18
+    },
+
+    myHobbies: function()
+    {
+        return `My hobbies are ${this.hobbies} and I love doing all of them in my free time.!`
+    }
+
+}
+
+
+// now let us create a function that will help us make object
+
+function createObj(name,age,hobbies)
+{   
+    // this line right here tells us that it should look at other methods when we dont have these methods defined in the object
+    const user = Object.create(otherMethods)
+    user.name = name
+    user.age = age
+    user.hobbies = hobbies
+    user.sumVal = function()
+    {
+        return [1,2,3,4,5,6,7,8,9,10].reduce((a,b) => a+b)
+    }
+
+    // now we have to return the object that we created
+
+    return user
+}
+
+
+// time to create an object
+const objone = createObj("Aman", 26, ["coding", "swimming", "cycling", "making tons of money"])
+objone.sumVal()
+console.log()
+console.log(objone.about())
+console.log(objone.is18())
+console.log(objone.myHobbies())
+// as we can see we are able to access the  methods in the usermethods for this
+// under the hoos whats ahppening is that __proto__ is actyally referncing to the other methods object which will be used in this case
+// we can see the same when we try to do this
+// here obj.__proto__ is referencong top the othermethods function that we just made
+console.log(objone.__proto__)
+
+
+//// now we will use a slightly diffent approch and make object and in case of using the other methods we will use the empty prototype method that is always present in all the functions that we declare
+
+
+
+// so let's do that
+
+function createObj2(name,age,hobbies){
+    // this way we tell the javascript compiler to look for the extra methods in the empty object that is always present in each function declaration
+    // this is an empty object initially
+    const user = Object.create(createObj2.prototype)
+    user.name = name
+    user.age = age
+    user.hobbies = hobbies
+    user.sum = function()
+    {
+        return [1,2,3,4,5,6,7,8,9,10].reduce((a,b)=> a+b)
+    }
+
+    // now we will return this object
+
+    return user
+}
+
+// now it is time to populate the empty object present inside the function we just saw
+
+createObj2.prototype.about = function(){
+
+    return `Hi my name is ${this.name} and I am ${this.age} years old`
+}
+
+
+createObj2.prototype.myHobbies = function() {
+
+    return `My hobbies are ${this.hobbies} and I like to do them in my free time`
+}
+
+createObj2.prototype.is18 = function() {
+
+    return this.age>=18
+}
+
+
+// now let us make an object
+
+const objtwo = createObj2("Aman Dubey", 26, ["coding", "going to gym", "swimming", "making tons of money money"])
+// now we will call the methods
+
+console.log()
+console.log("This is all about object two")
+console.log(objtwo.__proto__)
+console.log(objtwo.about())
+console.log(objtwo.myHobbies())
+console.log(objtwo.is18())
+console.log()
+console.log()
+
+
+
+/// now we will see how we can do all this using the new keyword
+
+
+function createObj3(name,age,hobbies)
+{
+    this.name = name
+    this.age = age
+    this.hobbies = hobbies
+}
+
+
+const objthree = new createObj3("Aman Dubey",26, ["Getting my heart broken", "coding", "learning javascript"])
+console.log()
+console.log("This is about object three!!")
+console.log("As we can see here the __proto__ reference by default refers to the empty object called as the protoype which is present in everry function in this case it the createObj3 method")
+console.log(objthree.__proto__)
+console.log()
+
+createObj3.prototype.aboutMe = function(){
+    return `Hi my name is ${this.name} and I am ${this.age} years old!!`
+}
+
+createObj3.prototype.myHobby = function() {
+    return `My hobbies are ${this.hobbies} and I like to do them in my free time`
+}
+
+createObj3.prototype.is18 = function() {
+    return this.age>=18
+}
+
+console.log("Let us use the methods inside the prototype object that we just6 amde now")
+console.log(objthree.aboutMe())
+console.log(objthree.myHobby())
+console.log(objthree.is18())
+console.log()
+console.log()

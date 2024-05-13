@@ -27,7 +27,7 @@ console.log(hello.prototype)
 // this can be proved using this simple if else statement
 if(hello.prototype)
     {
-        console.log("Protopue is present")
+        console.log("Prototype is present")
     }
 else{
     console.log("Prototype is absent")
