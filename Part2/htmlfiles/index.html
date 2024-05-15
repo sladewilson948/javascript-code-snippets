@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header">
+        <nav class="container">
+            <h1 class="logo" style="display: flex; flex-direction: column; justify-content: center;">To-Do or Not To-Do</h1>
+            <ul class="nav-items">
+                <li><a href="" style="text-decoration: none; color: aliceblue;">Home</a></li>
+                <li><a href="" style="text-decoration: none; color: aliceblue;">Todo</a></li>
+                <li><a href="" style="text-decoration: none; color: aliceblue;">SignIn</a></li>
+            </ul>
+        </nav>
+        <div class="text">
+            <input type="text" class="content" placeholder="The ultimate todo list" id="task" required>
+            <br>
+            <br>
+            <input type="text" class="content" placeholder="Enter Description" id="content" required>
+        </div>
+        <br>
+        <div class="my-button">
+            <button class="my-btn" onclick="submitContent()">Submit</button>
+            <button class="my-btn" onclick="resetContent()" >Reset</button>
+        </div>
+        <br>
+        <div class="to-do-tasks">
+            
+        </div>
+        
+        
+    </header>
+    <footer class="footer">
+        Made with ❤️ by Aman Dubey
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
