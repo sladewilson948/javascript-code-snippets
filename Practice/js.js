@@ -124,3 +124,30 @@ console.log(bike1.provideSummary())
 console.log(bike1.provideCC())
 
 
+// console.log(typeof fname)
+// let fname = "Aman Dubey"
+
+
+function edaMone()
+{
+    let flag = true
+    return function(){
+        if(flag)
+            {
+                console.log("Eda Mone!!")
+                flag = false
+            }
+        else{
+            console.log("Chetta Duplicate Indian Mone!!")
+        }
+    }
+}
+
+
+const obj1 = edaMone()
+obj1()
+obj1()
+obj1()
+obj1()
+obj1()
+console.log("What we just saw here is an example of closures in javascript!!")
