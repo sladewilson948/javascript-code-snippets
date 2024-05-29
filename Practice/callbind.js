@@ -139,7 +139,7 @@ const student4 = {
 // we will sue bind method
 
 const func1 = thisIsMe.bind(student1,...["Daal Chawal","Varanasi"])
-const func2 = thisIsMe.bind(student2,...["Panner Bhurji", "Totapur"])
+const func2 = thisIsMe.bind(student2,...["Panner Bhurji", "Dholakpur"])
 const func3 = thisIsMe.bind(student3,...["Baby Corn","Srinagar"])
 const func4 = thisIsMe.bind(student4,...["Panner Fried Rice", "Varanasi"])
 

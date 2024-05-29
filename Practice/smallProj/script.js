@@ -1,3 +1,9 @@
+window.addEventListener('beforeunload', function (e) {
+    // Cancel the event
+    e.preventDefault();
+    // Chrome requires returnValue to be set
+    e.returnValue = 'Are you sure you want to leave?';
+});
 
 
 function addTask(){
@@ -29,6 +35,7 @@ function addTask(){
     const ele4 = document.createElement("div")
     ele4.id = id
     ele4.className = "item"
+    ele4.style.backgroundColor = getColor()
     // this line helps us to put priortuiy to our tasks
     ele4.dataset.priority = getValue()
     ele4.append(justone)
@@ -79,6 +86,22 @@ function getValue()
     }
 }
 
+function getColor()
+{
+    if(document.getElementById("choice").value==3)
+        {
+            return "#CBB114"
+        }
+    else if(document.getElementById("choice").value==2)
+        {
+            return "#CF7014"
+        }
+    else{
+        return "#CF4214"
+    }
+}
+
+
 
 function sortTasksHL()
 {
@@ -114,6 +137,27 @@ function sortTasksLH()
             tasks.sort((a, b) => {
                 return priorityOrder[b.dataset.priority] - priorityOrder[a.dataset.priority];
             })
+    
+    tasks.forEach(task => {
+        taskList.appendChild(task)
+    })
+
+}
+
+function shuffle()
+{
+
+
+    const taskList = document.querySelector(".my-tasks")
+    const tasks = Array.from(taskList.getElementsByClassName("item"))
+
+    for(let index in tasks)
+        {
+            new_idx = Math.floor(Math.random()*tasks.length)
+            let temp = tasks[index]
+            tasks[index] = tasks[new_idx]
+            tasks[new_idx] = temp
+        }
     
     tasks.forEach(task => {
         taskList.appendChild(task)
