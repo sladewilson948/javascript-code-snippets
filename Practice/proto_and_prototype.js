@@ -114,3 +114,49 @@ console.log(movieObj.about())
 
 
 
+/// lets practice a little more here again
+
+
+const mymethods = {
+
+    isExpensive: function(){
+        
+        return this.price > 1800000
+    },
+
+    getDetails: function()
+    {
+
+       return `Hi the name of the car is ${this.name} and it has and engine of ${this.cc} cc and is in the segments of ${this.segment}` 
+    }
+}
+
+
+
+function createCarObject(name,yoe,cc,price,segment)
+{
+
+    const myCar = Object.create(mymethods)
+
+    myCar.name = name
+    myCar.yoe = yoe
+    myCar.cc = cc
+    myCar.price = price
+    myCar.segment = segment
+    myCar.myfunction = function()
+    {
+        return [1,2,3,4,5,6,7,8,9,10].reduce((a,b)=> a+b)
+    }
+
+    return myCar
+
+}
+
+const myCar = createCarObject("BMW X5",2024,45000,4500000,"suv")
+
+console.log(myCar.getDetails())
+console.log(myCar.myfunction())
+console.log(myCar.isExpensive())
+
+
+
