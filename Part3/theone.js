@@ -45,7 +45,8 @@ function newObject(empname,salary,age,exp,techstack){
     myobj.empname = empname
     myobj.salary = salary
     myobj.age = age
-    myobj.exp = expmyobj.techstack = techstack
+    myobj.exp = exp
+    myobj.techstack = techstack
     myobj.funny = [1,2,3,4,5,6,7,8,9,10].reduce((a,b)=> a+b)
 
     return myobj
@@ -135,3 +136,46 @@ console.log(girl1.isMyType())
 console.log(girl1.lovelanguage)
 console.log(girl1.intro())
 console.log(girl1.futureGoals)
+
+
+/// lets make a lists og obejct we found on our amazon cart and lets make a total of all the objects we added in the cart
+
+const myCart = [
+    {
+        pname: "MSI monitor",
+        price: 45000,
+        category: "Electronics",
+        maker: "MSI"
+    },
+    {
+        pname: "type c to HDMI cable",
+        price: 450,
+        category: "Electrnics",
+        maker: "Hibli"
+    },
+    {
+        pname: "65% keyboard",
+        price: 5000,
+        category: "Electronics",
+        maker: "RK"
+    },
+    {
+        pname: "Razer Viper Mini",
+        price: 1200,
+        category: "Electronics",
+        maker: "Razer"
+    }
+
+]
+
+
+console.log(myCart.reduce((acuum, p)=> acuum + p.price,0))
+console.log("Ascending Order")
+console.log(myCart.slice(0).sort((p1,p2) => p1.price - p2.price))
+console.log("Descending Order")
+console.log(myCart.slice(0).sort((p1,p2) => p2.price - p1.price))
+console.log(myCart.filter(x=> x.category=="Electronics"))
+myCart.forEach(x=> {
+    x.price = 2*x.price
+})
+console.log(myCart)
