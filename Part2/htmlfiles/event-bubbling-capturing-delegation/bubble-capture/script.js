@@ -40,7 +40,7 @@ parent.addEventListener("click", (e)=> {
 grandparent.addEventListener("click", (e)=> {
     
     console.log("You just cliked on the grandparent !!!")
-    console.log(e.target)
+    console.log(e.target).k
 })
 
 
