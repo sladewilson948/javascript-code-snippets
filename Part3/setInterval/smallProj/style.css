@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.change-color
+{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button
+{
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(29, 28, 28, 0.945);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+button:hover
+{
+    box-shadow: 0 0 10px rgba(255, 73, 1, 0.788);
+    background-color: black;
+    color: white;
+}
+
