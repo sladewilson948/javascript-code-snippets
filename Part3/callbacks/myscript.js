@@ -24,7 +24,7 @@ list1 = [
     },
     {
         name: "Triumph speed 400",
-        price: "315000"
+        price: 315000
     }
 ]
 
