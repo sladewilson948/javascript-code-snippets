@@ -44,28 +44,92 @@ const head6 = document.querySelector(".heading6")
 /// improved way
 
 
-setTimeout(()=> {
-    head1.textContent = "this is the text content for heading 1"
-    head1.style.color = "violet"
+/// this is called as callback hell
+// this is more difficult to read as well
+// too many nested callbacks
+
+
+// setTimeout(()=> {
+//     head1.textContent = "this is the text content for heading 1"
+//     head1.style.color = "violet"setTimeout(()=> {
+//         head2.textContent = "this is the text content for heading 2"
+//         head2.style.color = "pink" setTimeout(()=> {
+//             head3.textContent = "this is the text content for heading 3"
+//             head3.style.color = "grey" setTimeout(()=> {
+//                 head4.textContent = "this is the text content for heading 4"
+//                 head4.style.color = "orange" setTimeout(()=> {
+//                     head5.textContent = "this is the text content for heading 5"
+//                     head5.style.color = "purple" setTimeout(()=> {
+//                         head6.textContent = "this is the text content for heading 6"
+//                         head6.style.color = "green"
+//                     },1000)
+//                 },1000)
+//             },1000)
+//         },1000)
+//     },1000)
+// },1000)
+
+/// this is also called as pyramid of doom
+
+
+// function changeText(element, text, color, time)
+// {
+
+//     setTimeout(()=> {
+
+//         element.textContent = text
+//         element.style.color = color
+//     }, time)
+// }
+
+
+// changeText(head1,"this is text one", "violet", 1000)
+// changeText(head2,"this is text two", "green", 2000)
+// changeText(head3,"this is text three", "orange", 3000)
+// changeText(head4,"this is text four", "blue", 4000)
+// changeText(head5,"this is text five", "grey", 5000)
+// changeText(head6,"this is text six", "pink", 6000)
+
+
+
+/// let us try to this with the help of call backs
+
+
+function chnageText(element, text, color, time, onSuccessCallBack, onFailiureCallback)
+{
     setTimeout(()=> {
-        head2.textContent = "this is the text content for heading 2"
-        head2.style.color = "pink"
-        setTimeout(()=> {
-            head3.textContent = "this is the text content for heading 3"
-            head3.style.color = "grey"
-            setTimeout(()=> {
-                head4.textContent = "this is the text content for heading 4"
-                head4.style.color = "orange"
-                setTimeout(()=> {
-                    head5.textContent = "this is the text content for heading 5"
-                    head5.style.color = "purple"
-                    setTimeout(()=> {
-                        head6.textContent = "this is the text content for heading 6"
-                        head6.style.color = "green"
-                    },1000)
-                },1000)
-            },1000)
-        },1000)
-    },1000)
-},1000)
+        if(element)
+        {
+            element.textContent = text
+            element.style.color = color
+            if(onSuccessCallBack)
+            {
+                onSuccessCallBack()
+            }
+        }
+        else{
+            if(onFailiureCallback)
+            {
+                onFailiureCallback()
+            }
+        }
+    }, time)
+}
+
+/// this is called as pyramid of doom broski!!
+
+chnageText(head1, "this is text one", "pink",1000, ()=>{
+    chnageText(head2, "this is text two", "green",2000, ()=>{
+        chnageText(head3, "this is text three", "violet",3000, ()=>{
+            chnageText(head4, "this is text four", "blue",3000, ()=>{
+                chnageText(head5, "this is text five", "grey",2000, ()=> {
+                    chnageText(head6, "this is text six", "red",1000, ()=> {
+
+                    },()=> {console.log("This element does not exists")})
+                },()=> {console.log("This element does not exists")})
+            },()=>{console.log("The element does not exists")})
+        },()=>{console.log("The element does not exists")})
+    },()=> {console.log("The element does not exists")})
+},()=> {console.log("The element does not exists")})
+
 
